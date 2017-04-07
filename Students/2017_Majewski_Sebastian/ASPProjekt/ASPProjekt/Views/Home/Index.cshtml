@@ -1,0 +1,62 @@
+﻿@model ASPProjekt.Models.HomeIndexViewModel
+@{
+    Layout = "~/Views/Shared/_HomePageLayout.cshtml";
+    ViewBag.Title = "Strona Główna";
+}
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <p class="inline-link">Najaktywniejsi użytkownicy</p>
+            <p class="pull-right inline-link">@Html.ActionLink("Zobacz wszystkie", "Index", "Account")</p>
+        </div>
+        <div class="panel-body">
+            @foreach (var user in Model.Users)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h5>@Html.RouteLink(@user.UserName, "UserRoute", new { userName = @user.UserName }, new { @class = "link" })</h5>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <p class="inline-link">Największe śmietniki</p>
+            <p class="pull-right inline-link">@Html.ActionLink("Zobacz wszystkie", "Index", "Bins")</p>
+        </div>
+        <div class="panel-body">
+            @foreach (var bin in Model.Bins)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h5>@Html.ActionLink(@bin.Name, "Details", "Bins", new { id = @bin.Id }, new { @class = "link" })</h5>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <p class="inline-link">Najczęściej komentowane śmieci</p>
+            <p class="pull-right inline-link">@Html.ActionLink("Zobacz wszystkie", "Index", "Trashes")</p>
+        </div>
+        <div class="panel-body">
+            @foreach (var trash in Model.Trash)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h5>@Html.ActionLink(@trash.Title, "Details", "Trashes", new { id = @trash.Id }, new { @class = "link" })</h5>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

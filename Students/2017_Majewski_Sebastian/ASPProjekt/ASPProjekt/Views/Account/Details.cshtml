@@ -1,0 +1,52 @@
+﻿@using Microsoft.AspNet.Identity
+@model ASPProjekt.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Śmietniki";
+}
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-9">
+                    <h2>
+                        <small>Śmietniki użytkownika: </small>
+                        @Html.DisplayFor(model => model.UserName)
+                    </h2>
+                </div>
+                @if (Request.IsAuthenticated && (User.IsInRole("Administrator") || User.IsInRole("RootAdmin")))
+                {
+                    <div class="col-md-3">
+                        <div class="pull-right">
+                            @if (ViewBag.Delete)
+                            {
+                                @Html.ActionLink("Usuń", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
+                            }
+                            @Html.ActionLink("Edytuj", "Edit", new { id = Model.UserName }, new { @class = "btn btn-info" })
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            @foreach (var bin in Model.Bins)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>
+                            <small>@Html.ActionLink(bin.ApplicationUser.UserName, "Details", "Account", new { id = bin.ApplicationUser.Id }, new { @class = "bin_link" })</small>
+                            <small>:</small>
+                            @Html.ActionLink(@bin.Name, "Details", "Bins", new { id = @bin.Id }, new { @class = "link" })
+                        </h4>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

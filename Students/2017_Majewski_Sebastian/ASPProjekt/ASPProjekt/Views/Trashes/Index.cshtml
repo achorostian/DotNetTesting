@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ASPProjekt.Models.Trash>
+
+@{
+    ViewBag.Title = "Śmieci";
+}
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3>Śmieci</h3>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            @foreach (var trash in Model)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>
+                            <small>@Html.ActionLink(trash.Bin.Name, "Details", "Bins", new { id = trash.Bin.Id }, new { @class = "bin_link" })</small>
+                            <small>:</small>
+                            @Html.ActionLink(@trash.Title, "Details", "Trashes", new { id = @trash.Id }, new { @class = "link" })
+                        </h4>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

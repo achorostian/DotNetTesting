@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ASPProjekt.Models.Bin>
+
+@{
+    ViewBag.Title = "Śmietniki";
+}
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3>Śmietniki</h3>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            @foreach (var bin in Model)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>
+                            <small>@Html.ActionLink(bin.ApplicationUser.UserName, "Details", "Account", new { id = bin.ApplicationUser.Id }, new { @class = "bin_link" })</small>
+                            <small>:</small>
+                            @Html.ActionLink(@bin.Name, "Details", "Bins", new { id = @bin.Id }, new { @class = "link" })
+                        </h4>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

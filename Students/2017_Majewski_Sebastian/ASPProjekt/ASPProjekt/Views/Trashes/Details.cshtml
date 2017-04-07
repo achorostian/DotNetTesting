@@ -1,0 +1,70 @@
+﻿@using Microsoft.AspNet.Identity
+@model ASPProjekt.Models.Trash
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<div class="row">
+    <div class="panel panel-default">      
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-9">
+                    <h2>
+                        <small>@Html.ActionLink(Model.Bin.Name, "Details", "Bins", new { id = Model.Bin.Id }, new { @class = "bin_link" })</small>
+                        <small>:</small>
+                        @Html.DisplayFor(model => model.Title)
+                    </h2>
+                    <h6>
+                        <small>
+                            Dodano:
+                            @Html.DisplayFor(model => model.AddTime)
+                        </small>
+                    </h6>
+                </div>
+                @if (HttpContext.Current.User.Identity.GetUserId() == Model.Bin.ApplicationUser.Id)
+                {
+                    <div class="col-md-3">
+                        <div class="pull-right">
+                            @Html.ActionLink("Edytuj", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Usuń", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
+                        </div>
+                    </div>
+                }
+            </div>                      
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            @Html.Raw(Server.HtmlDecode(Model.Content))
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    @if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+    {
+        @Helpers.CommentBox("Komentarz", "Wyślij", Model.Id)
+    }
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <button class="btn btn-default" data-toggle="collapse" data-target="#comments">Komentarze</button>
+        </div>
+        <div class="panel-body">
+            <div id="comments" class="collapse">
+                <div class="row">
+                    @foreach (var comment in Model.Comments)
+                    {
+                        if (comment?.ApplicationUser?.UserName != null)
+                        {
+                            @Helpers.Comment(comment.ApplicationUser.UserName, comment.Content)
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

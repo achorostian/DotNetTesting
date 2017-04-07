@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNet.Identity
+@model ASPProjekt.Models.Bin
+
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-9">
+                    <h2>
+                        <small>@Html.RouteLink(Model.ApplicationUser.UserName, "UserRoute", new { userName = Model.ApplicationUser.UserName }, new { @class = "bin_link" })</small>
+                        <small>:</small>
+                        @Html.DisplayFor(model => model.Name)
+                    </h2>
+                </div>
+                @if (HttpContext.Current.User.Identity.GetUserId() == Model.ApplicationUser.Id)
+                {
+                    <div class="col-md-3">
+                        <div class="pull-right">
+                            @Html.ActionLink("Edytuj", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Usuń", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            @foreach (var trash in Model.Trash)
+            {
+                @Helpers.Trash(trash.Title, trash.AddTime, trash.Id)
+            }
+        </div>     
+    </div>
+</div>
