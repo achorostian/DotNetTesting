@@ -1,0 +1,24 @@
+﻿@model Gym.Models.User.ListUserViewModel
+@{
+    ViewBag.Title = "AssignRoleToUser";
+}
+
+<h2>List of users in this role</h2>
+
+    <h4>Roles.</h4>   
+<table class="table">
+    @foreach (var item in ViewBag.data)
+    {
+        <tr>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.Rola
+            </td>
+            <td>
+                @Html.ActionLink("Edytuj","RegisterRole","Account")
+            </td>
+        </tr>
+    }
+</table>
