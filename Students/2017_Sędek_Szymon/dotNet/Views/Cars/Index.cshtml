@@ -1,0 +1,52 @@
+﻿@model IEnumerable<dotNet.Models.Car>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 id ="indexCar">Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Artist.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vin)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artist.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vin)
+            </td>
+            <td>
+                <button class="btn btn-default" name="details" onclick="location.href='@Url.Action("Details", new {id = item.CarId})';return false;">Details</button>
+                <button class="btn btn-default" name="delete" onclick="location.href='@Url.Action("Delete", new {id = item.CarId})';return false;">Delete</button>
+                <button class="btn btn-default" name="edit" onclick="location.href='@Url.Action("Edit", new {id = item.CarId})';return false;">Edit</button>
+            </td>
+        </tr>
+    }
+
+</table>
