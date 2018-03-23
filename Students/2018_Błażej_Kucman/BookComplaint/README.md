@@ -2,5 +2,5 @@
 # Autor
 # Błażej Kucman
 
-# Użyta jest błędna nazwa projektu testów jak i namespace ale nie wpływa to na działanie programu
-# Użyłem przypadkiem UnitTestBoardGame zamiast UnitTestBookComplaint
+## Użyta jest błędna nazwa folderu projektu testów jak i namespace w testach ale nie wpływa to na działanie programu
+## Użyłem przypadkiem UnitTestBoardGame zamiast UnitTestBookComplaint
