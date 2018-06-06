@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="MyTest" Id="f1a095c9-395f-4497-ac60-5808c5bd0b68" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.703278e9-8486-4a6b-98a1-733518db1896.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="c02d1cd2-0910-4260-a1f0-65a1e215fbae" Version="1.1" Url="http://www.x-kom.pl/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://www.x-kom.pl/" ReportingName="" IgnoreHttpStatusCode="False" />
+    <Request Method="GET" Guid="a0599a36-22f9-489e-a7d9-9638fbe86e65" Version="1.1" Url="http://localhost:2120/" ThinkTime="6" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False" />
+    <Request Method="GET" Guid="843a2789-a980-4fc7-bdaf-161d9aff4787" Version="1.1" Url="http://localhost:2120/Ebay" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2120/" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="312c9f8a-96bb-476f-b2f7-9f6714f811d9" Version="1.1" Url="http://localhost:2120/Ebay/Create" ThinkTime="4" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2120/Ebay" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="473ee45a-eac4-4de9-8877-48d9622a3796" Version="1.1" Url="http://localhost:2120/Ebay" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://localhost:2120/Ebay/Create" />
+      </Headers>
+    </Request>
+  </Items>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+  <WebTestPlugins>
+    <WebTestPlugin Classname="Microsoft.SystemCenter.Cloud.GsmPlugins.GuidGeneratorWebTestPlugin, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Generate Guid" Description="Generates a new guid.">
+      <RuleParameters>
+        <RuleParameter Name="ContextParameterName" Value="" />
+        <RuleParameter Name="OutputFormat" Value="" />
+      </RuleParameters>
+    </WebTestPlugin>
+  </WebTestPlugins>
+</WebTest>

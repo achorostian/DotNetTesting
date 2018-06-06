@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Twitter.Models.User.UserRolesViewModel>
+    @{
+    ViewBag.Title = "AssignRoleToUser";
+    }
+    <h2>List of users in this role</h2>
+    <h4>Roles.</h4>
+    <table class="table">
+        @foreach (var item in Model)
+    {
+            <tr>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.Rola
+                </td>
+                <td>
+                    @Html.ActionLink("Edytuj", "RegisterRole", "Role")
+                </td>
+                <td>
+                    @Html.ActionLink("Usuń użytkownika z roli", "RemoveUserFromRole", new { EmailUser = item.Email, RoleName = item.Rola })
+                </td>
+            </tr>
+        }
+    </table>
