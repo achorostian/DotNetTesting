@@ -1,0 +1,8 @@
+"Elapsed Time","ELSCONTROLLER, LoadTest:Scenario, User Load, _Total","ELSCONTROLLER, LoadTest:Page, Pages/Sec, _Total","ELSCONTROLLER, LoadTest:Page, Avg. Page Time, _Total","ELSCONTROLLER, LoadTest:Errors, Errors/Sec, _Total","ELSCONTROLLER, LoadTest:Errors, Threshold Violations/Sec, _Total"
+"00:00","","","","",""
+"00:15","20","3,266667","1,734694","1,933333","0"
+"00:30","30","5,466667","1,695122","4,8","0"
+"00:45","50","11,2","1,678571","9,933333","0"
+"01:00","60","9,533334","1,874126","10,4","0"
+"01:15","60","3,8","2,017544","6,133333","0"
+"01:30","60","0,06666667","2","0,1333333","0"

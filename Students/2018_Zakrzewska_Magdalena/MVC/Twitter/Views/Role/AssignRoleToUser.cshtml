@@ -1,0 +1,19 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+@{
+    ViewBag.Title = "AssignRoleToUser";
+}
+
+<h2>Nadaj uprawnienia użytkownikowi</h2>
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.Label("Wybierz użytkownika",new {@class="col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.DropDownList("Email")
+        </div>
+        
+        
+
+    </div>
+    <input type="submit" value="Nadaj uprawnienie" />
+}

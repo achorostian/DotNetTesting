@@ -1,0 +1,37 @@
+﻿@using Twitter.Helper
+@model IEnumerable<Twitter.Models.User.RoleViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Uprawnienia użytkowników</h2>
+<section class="col-sm-6">
+    <ul class="table-bordered">
+        <li> @Html.ActionLink("Dodaj nowe uprawnienie dla użytkownika", "RegisterRole", "Role")</li>
+        <li>@Html.ActionLink("Lista użytkowników i uprawnień", "ShowAllUsersWithRole", "Role")</li>
+        <li>@Html.ActionLink("Moje uprawnienia", "ShowCurrentUserRoles", "Role")</li>
+
+    </ul>
+</section>
+<br />
+
+
+<table class="table">
+   
+    @MyHelper.TextFormatBegin()
+    @Html.DisplayNameFor(model=>model.RoleName)
+    
+    @MyHelper.TextFormatEnd()
+    
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>
+    </tr>
+    }
+
+</table>

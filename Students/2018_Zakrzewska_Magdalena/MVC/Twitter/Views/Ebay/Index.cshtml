@@ -1,0 +1,35 @@
+﻿@model Twitter.Models.EbaySummary
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ebay summary</title>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+               Generation date
+            </th>
+            <th>
+                Price average
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => Model.SaveDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.PriceAverage)
+            </td>
+        </tr>
+    </table>
+    @Html.ActionLink("Generate data", "Create")
+</body>
+</html>
