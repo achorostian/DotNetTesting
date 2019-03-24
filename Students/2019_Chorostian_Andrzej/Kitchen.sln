@@ -1,0 +1,19 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenTest", "KitchenTest.csproj", "{454E9860-C796-42D4-824A-1A3FC51AEA25}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Kitchen", "Kitchen\Kitchen.shproj", "{A5242CC1-135F-46FD-8B71-5E7ED559F984}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{454E9860-C796-42D4-824A-1A3FC51AEA25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{454E9860-C796-42D4-824A-1A3FC51AEA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{454E9860-C796-42D4-824A-1A3FC51AEA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{454E9860-C796-42D4-824A-1A3FC51AEA25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
